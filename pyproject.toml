@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "intuitive-care-teste"
+version = "0.1.0"
+description = ""
+authors = ["Guilherme de Souza Melo <guilherme.melo10@yahoo.com.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+selenium = "^4.30.0"
+requests = "^2.32.3"
+tqdm = "^4.67.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
