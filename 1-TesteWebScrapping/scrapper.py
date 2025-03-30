@@ -56,7 +56,7 @@ def download_files(links_files: tuple, destination_folder: str):
         raise Exception
 
 
-def pdf_to_zip(origin, zip_file):
+def zip_files(origin, zip_file):
     with zipfile.ZipFile(zip_file, 'w') as zipf:
         for file in os.listdir(origin):
             if file.lower().endswith('.pdf'):
@@ -77,4 +77,4 @@ if __name__ == '__main__':
 
     zip_file = f'{folder_pdfs}/anexos.zip'
 
-    pdf_to_zip(folder_pdfs, zip_file)
+    zip_files(folder_pdfs, zip_file)

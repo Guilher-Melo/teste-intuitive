@@ -10,6 +10,8 @@ python = "^3.12"
 selenium = "^4.30.0"
 requests = "^2.32.3"
 tqdm = "^4.67.1"
+tabula-py = "^2.10.0"
+pandas = "^2.2.3"
 
 
 [build-system]
