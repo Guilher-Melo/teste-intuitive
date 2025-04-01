@@ -45,7 +45,8 @@ def download_files(links_files: tuple, destination_folder: str):
                 total_size = int(response.headers.get('content-length', 0))
 
                 with open(path, 'wb') as file:
-                    with tqdm(total=total_size, unit='B', unit_scale=True) as pbar:
+                    with tqdm(total=total_size, unit='B',
+                              unit_scale=True) as pbar:
                         for chunk in response.iter_content(chunk_size=1024):
                             if chunk:
                                 file.write(chunk)
@@ -68,7 +69,8 @@ def zip_files(origin, zip_file):
 
 
 if __name__ == '__main__':
-    url = 'https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos'
+    url = 'https://www.gov.br/ans/pt-br/acesso-a-informacao/' \
+        'participacao-da-sociedade/atualizacao-do-rol-de-procedimentos'
     folder_pdfs = './1-TesteWebScrapping/pdf-files'
 
     files = access_site(url)
