@@ -1,0 +1,131 @@
+{
+    "info": {
+      "name": "API de Busca de Operadoras",
+      "description": "Coleção para testar a API de busca textual em operadoras de saúde",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Verificar Status da API",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8000/",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": [""]
+          },
+          "description": "Verifica se a API está funcionando corretamente"
+        }
+      },
+      {
+        "name": "Listar Todas as Operadoras",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8000/operadoras?limit=10&offset=0",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["operadoras"],
+            "query": [
+              {
+                "key": "limit",
+                "value": "10"
+              },
+              {
+                "key": "offset",
+                "value": "0"
+              }
+            ]
+          },
+          "description": "Lista todas as operadoras com paginação"
+        }
+      },
+      {
+        "name": "Buscar Operadoras - Termo Específico",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8000/busca?q=unimed&limit=10&offset=0",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["busca"],
+            "query": [
+              {
+                "key": "q",
+                "value": "unimed"
+              },
+              {
+                "key": "limit",
+                "value": "10"
+              },
+              {
+                "key": "offset",
+                "value": "0"
+              }
+            ]
+          },
+          "description": "Busca operadoras que contenham 'unimed' em seus dados"
+        }
+      },
+      {
+        "name": "Buscar Operadoras - Por Número ANS",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8000/busca?q=419761&limit=10&offset=0",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["busca"],
+            "query": [
+              {
+                "key": "q",
+                "value": "419761"
+              },
+              {
+                "key": "limit",
+                "value": "10"
+              },
+              {
+                "key": "offset",
+                "value": "0"
+              }
+            ]
+          },
+          "description": "Busca operadoras por número ANS"
+        }
+      },
+      {
+        "name": "Buscar Operadoras - Sem Resultados",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8000/busca?q=xyzabc123&limit=10&offset=0",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["busca"],
+            "query": [
+              {
+                "key": "q",
+                "value": "xyzabc123"
+              },
+              {
+                "key": "limit",
+                "value": "10"
+              },
+              {
+                "key": "offset",
+                "value": "0"
+              }
+            ]
+          },
+          "description": "Busca com um termo que provavelmente não retornará resultados"
+        }
+      }
+    ]
+  }
