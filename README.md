@@ -14,6 +14,7 @@ Este repositório contém a solução para um desafio de estágio envolvendo qua
 - **MySQL** (Docker, SQL, LOAD DATA INFILE)
 - **Vue.js** (Interface Web)
 - **Postman** (Testes de API)
+- **Poetry** (Gerenciamento de dependências Python)
 
 ---
 ## Estrutura do Projeto
@@ -25,32 +26,38 @@ Este repositório contém a solução para um desafio de estágio envolvendo qua
 |-- 3-TesteCriacaoBD/             # Scripts SQL para criação e carga de tabelas
 |-- 4-TesteAPI/                   # Backend FastAPI, Interface Vue.js, Coleção Postman
 |-- README.md                     # Documentação do projeto
+|-- pyproject.toml                # Arquivo de dependências gerenciado pelo Poetry
 ```
 
 ---
 ## Como Executar
 
-### 1. Web Scraping
+### 1. Instalar dependências Python com Poetry
+```bash
+poetry install
+```
+
+### 2. Web Scraping
 ```bash
 cd 1-TesteWebScrapping
 python scrapper.py
 ```
 Esse script realiza o download dos PDFs e os compacta em um arquivo ZIP.
 
-### 2. Transformação de Dados
+### 3. Transformação de Dados
 ```bash
 cd 2- TesteTransformacaoDados
 python transformation.py
 ```
 Este script extrai dados do PDF, gera um CSV estruturado e o compacta em um arquivo ZIP.
 
-### 3. Banco de Dados
+### 4. Banco de Dados
 1. **Subir o MySQL via Docker**
 ```bash
 docker-compose up -d
 ```
 
-### 4. API e Frontend
+### 5. API e Frontend
 1. **Rodar o backend FastAPI**
 ```bash
 cd 4-TesteAPI

@@ -157,7 +157,7 @@
                             });
 
                             results.value = response.data.results;
-                            // Atualizar o total se necessário
+
                             totalResults.value = response.data.total;
 
                         } catch (err) {
@@ -193,29 +193,6 @@
                         }
                     }
                 };
-
-                // const fetchPage = async () => {
-                //     try {
-                //         loading.value = true;
-                //         error.value = '';
-
-                //         const response = await axios.get(`${apiUrl}/busca`, {
-                //             params: {
-                //                 q: lastQuery.value,
-                //                 limit: limit.value,
-                //                 offset: currentOffset.value
-                //             }
-                //         });
-
-                //         results.value = response.data.results;
-
-                //     } catch (err) {
-                //         error.value = 'Erro ao buscar mais resultados.';
-                //         console.error(err);
-                //     } finally {
-                //         loading.value = false;
-                //     }
-                // };
 
                 return {
                     searchQuery,
